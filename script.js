@@ -63,11 +63,27 @@ function updateLibrary() {
     authorP.textContent = `Author: ${author}`;
     const pagesP = document.createElement('p');
     pagesP.textContent = `Pages: ${pages}`;
+    const fieldsetP = document.createElement('fieldset');
+    const legendP = document.createElement('legend');
+    legendP.textContent = 'Already Read?';
 
+    const readP = document.createElement('input');
+    readP.setAttribute('type', 'checkbox');
+    if (myLibrary[i].read == 'true') {
+      readP.setAttribute('checked', 'checked');
+    }
+    readP.addEventListener('change', () => {
+      const index = book.getAttribute('data-attribute');
+      updateRead(index);
+    });
+
+    fieldsetP.appendChild(legendP);
+    fieldsetP.appendChild(readP);
     book.appendChild(deleteButton);
     book.appendChild(titleP);
     book.appendChild(authorP);
     book.appendChild(pagesP);
+    book.appendChild(fieldsetP);
     book.setAttribute('data-attribute', `${i}`);
     book.classList = 'grid-item';
     gridC.appendChild(book);
@@ -76,4 +92,12 @@ function updateLibrary() {
 function deleteBook(index) {
   myLibrary.splice(index, 1);
   updateLibrary();
+}
+function updateRead(index) {
+  if (myLibrary[index].read === 'true') {
+    myLibrary[index].read = 'false';
+  } else {
+    myLibrary[index].read = 'true';
+  }
+  console.log(myLibrary[index].read);
 }
