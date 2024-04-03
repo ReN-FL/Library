@@ -6,7 +6,9 @@
 body {
   margin: 0;
   color: var(--font-color);
-  font-size: 1rem;
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 0.8rem;
 }
 .container {
   height: 100vh;
@@ -48,9 +50,10 @@ h1 {
 }
 form {
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 10px;
   justify-items: center;
+  align-items: center;
   padding: 8px;
 }
 #close-button {
@@ -70,10 +73,29 @@ input {
   border: none;
 }
 .grid-item {
+  position: relative;
   border: 1px solid black;
   width: 200px;
   height: 200px;
   background-color: var(--sec-color);
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 2fr;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+}
+p {
+  margin: 0;
+}
+.delete {
+  background-color: var(--sec-color);
+  color: red;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  border-top-right-radius: 10px;
 }
 .footer {
   background-color: var(--sec-color);
