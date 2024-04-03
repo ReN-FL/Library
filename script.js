@@ -8,7 +8,6 @@ const openDialog = document.querySelector('.add-book');
 openDialog.addEventListener('click', () => dialog.showModal());
 
 const submitButton = document.querySelector('#submit');
-// submitButton.addEventListener('click', addBookToLibrary);
 const form = document.querySelector('form');
 form.addEventListener('submit', addBookToLibrary);
 
@@ -32,7 +31,6 @@ function addBookToLibrary() {
 
   let book = new Book(title.value, author.value, pages.value, read.value);
   myLibrary.push(book);
-  console.log(myLibrary);
   updateLibrary();
 }
 function updateLibrary() {
@@ -99,5 +97,4 @@ function updateRead(index) {
   } else {
     myLibrary[index].read = 'true';
   }
-  console.log(myLibrary[index].read);
 }
