@@ -27,17 +27,34 @@
             <label for="book-pages">Number of Pages</label>
             <input type="number" name="pages" id="book-pages" />
           </div>
-          <div>
-            <label for="book-read">Already read</label>
-            <input type="checkbox" name="read" id="book-read" />
-          </div>
+          <fieldset>
+            <legend>Already read</legend>
+            <label for="book-read1">Yes</label>
+            <input type="radio" name="read" id="book-read1" value="true" />
+            <label for="book-read2">No</label>
+            <input
+              type="radio"
+              name="read"
+              id="book-read2"
+              value="false"
+              checked
+            />
+          </fieldset>
           <button id="submit" type="submit">Add Book</button>
         </form>
       </dialog>
-      <div class="body">
-        <div class="grid-item"></div>
+      <div class="body"></div>
+      <div class="footer">
+        <div class="footer-container">
+          <p>
+            Made by
+            <a target="_blank" rel="noreferrer" href="https://github.com/ReN-FL"
+              >ReN</a
+            >
+            - 2024
+          </p>
+        </div>
       </div>
-      <div class="footer"></div>
     </div>
     <script src="script.js"></script>
   </body>

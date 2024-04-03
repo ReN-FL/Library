@@ -97,8 +97,24 @@ p {
   cursor: pointer;
   border-top-right-radius: 10px;
 }
+
+/* Footer Section */
+
 .footer {
+  height: 5wh;
   background-color: var(--sec-color);
   grid-row: 3;
   padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.footer-container > p > a {
+  color: red;
+  text-decoration: underline;
+}
+.footer-container > p > a:hover {
+  color: rgb(235, 235, 235);
+  text-decoration: overline;
 }
